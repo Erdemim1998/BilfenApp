@@ -84,13 +84,13 @@
           </div>
 
           <div class="row mb-3">
-            <div class="col-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
               <label for="firstName" class="form-label"
                 >Adı <span class="star">*</span></label
               >
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
               <input
                 type="text"
                 id="firstName"
@@ -104,13 +104,13 @@
               >
             </div>
 
-            <div class="col-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
               <label for="lastName" class="form-label"
                 >Soyadı <span class="star">*</span></label
               >
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
               <input
                 type="text"
                 id="lastName"
@@ -127,13 +127,13 @@
           </div>
 
           <div class="row mb-3">
-            <div class="col-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
               <label for="userName" class="form-label"
                 >Kullanıcı Adı <span class="star">*</span></label
               >
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
               <input
                 type="text"
                 id="userName"
@@ -148,13 +148,13 @@
               >
             </div>
 
-            <div class="col-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
               <label for="email" class="form-label"
                 >Email <span class="star">*</span></label
               >
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
               <input
                 type="email"
                 id="email"
@@ -171,13 +171,13 @@
           </div>
 
           <div class="row">
-            <div class="col-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
               <label for="password" class="form-label"
                 >Parola <span class="star">*</span></label
               >
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
               <input
                 type="password"
                 id="password"
@@ -192,13 +192,13 @@
               >
             </div>
 
-            <div class="col-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
               <label for="role" class="form-label"
                 >Rol <span class="star">*</span></label
               >
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
               <select
                 ref="roleSelect"
                 id="role"
