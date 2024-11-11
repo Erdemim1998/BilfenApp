@@ -7,3 +7,6 @@ C:\Users\efsane\Downloads\BilfenProject\BilfenDocument.RestAPI\bin\Microsoft.Nod
 C:\Users\efsane\Desktop\BilfenProject\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.AssemblyReference.cache
 C:\Users\efsane\Desktop\BilfenProject\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.CoreCompileInputs.cache
 C:\Users\efsane\Desktop\BilfenProject\BilfenDocument.RestAPI\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\efsane\Desktop\GitHub\BilfenApp\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.AssemblyReference.cache
+C:\Users\efsane\Desktop\GitHub\BilfenApp\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.CoreCompileInputs.cache
+C:\Users\efsane\Desktop\GitHub\BilfenApp\BilfenDocument.RestAPI\bin\Microsoft.NodejsTools.WebRole.dll

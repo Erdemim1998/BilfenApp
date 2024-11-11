@@ -1,7 +1,7 @@
 <template>
-  <div class="mb-3">
+  <div class="row mb-3 ps-3 pe-3">
     <div
-      class="container bg-secondary-subtle d-flex align-items-center"
+      class="container col-12 bg-secondary-subtle d-flex align-items-center"
       style="height: 50px"
     >
       <a class="btn btn-primary rounded me-2" @click="btnRecordListClick"

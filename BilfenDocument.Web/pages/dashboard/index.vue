@@ -803,7 +803,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Cookies from "js-cookie";
-import axios from "axios";
+import axios, { type AxiosResponse } from "axios";
 import { Modal } from "bootstrap";
 import useVuelidate from "@vuelidate/core";
 import { required } from "@vuelidate/validators";
@@ -831,7 +831,6 @@ const divRole = ref<HTMLDivElement | null>(null);
 const divLoadDocument = ref<HTMLDivElement | null>(null);
 const divDocumentApprove = ref<HTMLDivElement | null>(null);
 const selectedFile = ref<File | null>(null);
-let isUserNameEmailTextChanged = ref(false);
 let bootstrapRecordListModal: Modal | null = null;
 let bootstrapInfoModal: Modal | null = null;
 let bootstrapRoleRecordModal: Modal | null = null;
@@ -1033,17 +1032,12 @@ const UserSubmit = async () => {
         `http://localhost:1337/api/users/DeleteUser/${UserId.value}`
       );
 
-      if (res.data.code == 204) {
-        infoMessageTitle.value = "Hata";
-      } else {
-        infoMessageTitle.value = "Bilgi";
-      }
-
+      SetInfoMessageTitle(res);
       infoMessage.value = res.data.message;
-      await nextTick();
       if (bootstrapInfoModal) bootstrapInfoModal.show();
     } else {
       if (UserId.value == 0) {
+        debugger;
         res = await axios.post("http://localhost:1337/api/users/CreateUser", {
           FirstName: FirstName.value,
           LastName: LastName.value,
@@ -1065,15 +1059,7 @@ const UserSubmit = async () => {
         });
       }
 
-      if (res.data.message != null) {
-        infoMessageTitle.value = "Hata";
-        infoMessage.value = res.data.message;
-      } else {
-        infoMessageTitle.value = "Bilgi";
-        infoMessage.value = "Kayıt işlemi başarıyla yapıldı!";
-      }
-
-      await nextTick();
+      SetInfoModalContent(res);
       if (bootstrapInfoModal) bootstrapInfoModal.show();
     }
   }
@@ -1097,17 +1083,8 @@ const RoleSubmit = async () => {
       });
     }
 
-    if (res.data.message != null) {
-      infoMessageTitle.value = "Hata";
-      infoMessage.value = res.data.message;
-    } else {
-      infoMessageTitle.value = "Bilgi";
-      infoMessage.value = "Kayıt işlemi başarıyla yapıldı!";
-    }
-
-    await nextTick();
+    SetInfoModalContent(res);
     if (bootstrapRoleRecordModal) bootstrapRoleRecordModal.hide();
-    await nextTick();
     if (bootstrapInfoModal) bootstrapInfoModal.show();
   }
 };
@@ -1122,14 +1099,8 @@ const DocumentSubmit = async () => {
         `http://localhost:1337/api/documents/DeleteDocument/${DocumentId.value}`
       );
 
-      if (res.data.code == 204) {
-        infoMessageTitle.value = "Hata";
-      } else {
-        infoMessageTitle.value = "Bilgi";
-      }
-
+      SetInfoMessageTitle(res);
       infoMessage.value = res.data.message;
-      await nextTick();
       if (bootstrapInfoModal) bootstrapInfoModal.show();
     } else {
       if (DocumentId.value == 0) {
@@ -1154,20 +1125,12 @@ const DocumentSubmit = async () => {
         );
       }
 
-      if (res.data.message != null) {
-        infoMessageTitle.value = "Hata";
-        infoMessage.value = res.data.message;
-      } else {
-        infoMessageTitle.value = "Bilgi";
-        infoMessage.value = "Kayıt işlemi başarıyla yapıldı!";
-      }
-
+      SetInfoModalContent(res);
       await UploadFile();
     }
 
-    await nextTick();
     if (bootstrapRoleRecordModal) bootstrapRoleRecordModal.hide();
-    await nextTick();
+
     if (bootstrapInfoModal) bootstrapInfoModal.show();
   }
 };
@@ -1423,6 +1386,24 @@ const btnUndoClick = async (id: number, name: string, isApprove: boolean) => {
       : "Reddedilen evrak geri alındı.";
 
     bootstrapInfoModal?.show();
+  }
+};
+
+const SetInfoMessageTitle = (res: AxiosResponse) => {
+  if (res.data.code == 204) {
+    infoMessageTitle.value = "Hata";
+  } else {
+    infoMessageTitle.value = "Bilgi";
+  }
+};
+
+const SetInfoModalContent = (res: AxiosResponse) => {
+  if (res.data.message != null) {
+    infoMessageTitle.value = "Hata";
+    infoMessage.value = res.data.message;
+  } else {
+    infoMessageTitle.value = "Bilgi";
+    infoMessage.value = "Kayıt işlemi başarıyla yapıldı!";
   }
 };
 
