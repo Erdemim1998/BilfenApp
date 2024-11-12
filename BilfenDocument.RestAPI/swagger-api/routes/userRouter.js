@@ -213,6 +213,70 @@ const userRouter = require('express').Router();
  *       example:
  *         UserName: "string"
  *         Email: "string"
+ * 
+ *     SendNotification:
+ *       type: object
+ *       required:
+ *         - PublicKey
+ *         - PrivateKey
+ *         - IsApprove
+ *         - Subscription
+ *         - endpoint
+ *         - expirationTime
+ *         - keys
+ *         - auth
+ *         - p256dh
+ *       properties:
+ *         IsApprove:
+ *           type: boolean
+ *           description: IsApprove information
+ *         PublicKey:
+ *           type: string
+ *           description: Public vapid key information
+ *         PrivateKey:
+ *           type: string
+ *           description: Private vapid key information
+ *         Subscription:
+ *           type: object
+ *           description: Notification subscription informations
+ *         endpoint:
+ *           type: string
+ *           description: Notification endpoint information
+ *         expirationTime:
+ *           type: Date
+ *           description: Notification endpoint information
+ *         keys:
+ *           type: object
+ *           description: Notification key informations
+ *         auth:
+ *           type: string
+ *           description: Notification auth information
+ *         p256dh:
+ *           type: string
+ *           description: Notification p256dh information
+ *       example:
+ *         IsApprove: false
+ *         PublicKey: "string"
+ *         PrivateKey: "string"
+ *         Subscription:
+ *           endpoint: "string"
+ *           expirationTime: null
+ *           keys:
+ *             auth: "string"
+ *             p256dh: "string"
+ * 
+ *     Message:
+ *       type: object
+ *       properties:
+ *         code:
+ *           type: integer
+ *           description: Code information
+ *         message:
+ *           type: string
+ *           description: Message information
+ *       example:
+ *         code: 0
+ *         message: "string"
  */
 
 /**
@@ -337,6 +401,38 @@ userRouter.delete('/DeleteUser/:id', userController.DeleteUser);
 
 /**
  * @swagger
+ * /api/users/GetVapidKeys:
+ *   get:
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: Public and private vapid key for notification
+ */
+userRouter.get('/GetVapidKeys', userController.GetVapidKeys);
+
+/**
+ * @swagger
+ * /api/users/SendNotification:
+ *   post:
+ *     tags: [Users]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/SendNotification'
+ *     responses:
+ *       200:
+ *         description: Notification sending information
+ *         content:
+ *           application/json:
+ *             schema:
+ *                 $ref: '#/components/schemas/Message'
+ */
+userRouter.post('/SendNotification', userController.SendNotification);
+
+/**
+ * @swagger
  * /api/users/SendEmail:
  *   post:
  *     tags: [Users]
@@ -349,6 +445,10 @@ userRouter.delete('/DeleteUser/:id', userController.DeleteUser);
  *     responses:
  *       200:
  *         description: Email sending information
+ *         content:
+ *           application/json:
+ *             schema:
+ *                 $ref: '#/components/schemas/Message'
  */
 userRouter.post('/SendEmail', userController.SendEmail);
 

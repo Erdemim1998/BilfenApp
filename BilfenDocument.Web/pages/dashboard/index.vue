@@ -1037,7 +1037,6 @@ const UserSubmit = async () => {
       if (bootstrapInfoModal) bootstrapInfoModal.show();
     } else {
       if (UserId.value == 0) {
-        debugger;
         res = await axios.post("http://localhost:1337/api/users/CreateUser", {
           FirstName: FirstName.value,
           LastName: LastName.value,
@@ -1289,16 +1288,16 @@ const stateStyle = computed(() => ({
       : "red",
 }));
 
-function handleFileChange(event: Event) {
-  debugger;
+const handleFileChange = (event: Event) => {
   const input = event.target as HTMLInputElement;
+
   if (input.files && input.files.length > 0) {
     selectedFile.value = input.files[0];
     FilePath.value = "/assets/documents/" + selectedFile.value.name;
   } else {
     selectedFile.value = null;
   }
-}
+};
 
 const UploadFile = async () => {
   if (selectedFile.value) {
@@ -1333,7 +1332,6 @@ const btnApproveRejectClick = async (
   toUserEmail: string,
   isApprove: boolean
 ) => {
-  debugger;
   const updated = await axios.put(
     `http://localhost:1337/api/documents/EditDocument`,
     {
@@ -1348,6 +1346,8 @@ const btnApproveRejectClick = async (
   );
 
   if (updated) {
+    await SendNotification(isApprove);
+
     await SendEmail(
       name,
       createDate,
@@ -1359,6 +1359,8 @@ const btnApproveRejectClick = async (
       user.data.LastName,
       isApprove ? "Approve" : "Reject"
     );
+
+    window.location.reload();
   } else {
     infoMessageTitle.value = "Hata";
     infoMessage.value = `Evrak ${
@@ -1407,6 +1409,70 @@ const SetInfoModalContent = (res: AxiosResponse) => {
   }
 };
 
+const SendNotification = async (isApprove: boolean) => {
+  if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register(
+        "/service-worker.js"
+      );
+
+      const permission = await Notification.requestPermission();
+
+      if (permission !== "granted") {
+        console.log("Bildirim izni verilmedi");
+        return;
+      }
+
+      const res = await axios.get(
+        "http://localhost:1337/api/users/GetVapidKeys"
+      );
+
+      const subscribe = await registration.pushManager.getSubscription();
+
+      if (subscribe) {
+        await subscribe.unsubscribe();
+      }
+
+      const subscription = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(res.data.publicKey),
+      });
+
+      await axios.post(
+        "http://localhost:1337/api/users/SendNotification",
+        {
+          Subscription: JSON.stringify(subscription),
+          PublicKey: res.data.publicKey,
+          PrivateKey: res.data.privateKey,
+          IsApprove: isApprove,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`,
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Service Worker kaydı veya abonelik hatası:", error);
+    }
+  }
+};
+
+const urlBase64ToUint8Array = (base64String: string) => {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, "+")
+    .replace(/_/g, "/");
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+
+  return outputArray;
+};
+
 const SendEmail = async (
   documentName: string,
   createDate: string,
@@ -1418,8 +1484,7 @@ const SendEmail = async (
   fromUserLastName: string,
   mailType: string
 ) => {
-  debugger;
-  const res = await axios.post("http://localhost:1337/api/users/SendEmail", {
+  await axios.post("http://localhost:1337/api/users/SendEmail", {
     DocumentName: documentName,
     CreateDate: createDate,
     ToUserFirstName: toUserFirstName,
@@ -1430,18 +1495,6 @@ const SendEmail = async (
     FromUserLastName: fromUserLastName,
     MailType: mailType,
   });
-
-  if (res.data.code == 200) {
-    infoMessageTitle.value = "Bilgi";
-    infoMessage.value = `Kullanıcının gönderdiği evrak talebi ${
-      mailType == "Approve" ? "onaylanmıştır" : "reddedilmiştir"
-    } ve bilgilendirici mail gönderimi yapılmıştır.`;
-  } else {
-    infoMessageTitle.value = "Hata";
-    infoMessage.value = res.data.message;
-  }
-
-  bootstrapInfoModal?.show();
 };
 
 const logout = () => {
