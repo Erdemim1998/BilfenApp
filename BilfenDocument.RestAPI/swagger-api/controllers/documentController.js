@@ -13,7 +13,7 @@ const GetAllDocuments = async (req, res) => {
                 'FilePath',
                 [literal(`CASE WHEN document.Status = 'OB' THEN 'Onay Bekliyor' 
                      WHEN document.Status = 'O' THEN 'Onaylandı' 
-                     ELSE 'Reddedildi' END`), 'Status'], // Conditional status
+                     ELSE 'Reddedildi' END`), 'Status'],
                 [fn('DATE_FORMAT', col('document.CreatedAt'), '%d.%m.%Y %H:%i:%s'), 'CreatedAt'],
                 [fn('DATE_FORMAT', col('document.UpdatedAt'), '%d.%m.%Y %H:%i:%s'), 'UpdatedAt'],
                 'UserId'
@@ -30,8 +30,8 @@ const GetAllDocuments = async (req, res) => {
                     'Email',
                     'Password',
                     'PasswordHash',
-                    [fn('DATE_FORMAT', col('User.createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'], // Format User's createdAt
-                    [fn('DATE_FORMAT', col('User.updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt'], // Format User's updatedAt
+                    [fn('DATE_FORMAT', col('User.createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
+                    [fn('DATE_FORMAT', col('User.updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt'],
                     'RoleId'
                 ],
                 include: [{
@@ -67,7 +67,7 @@ const GetAllDocumentsByUserId = async (req, res) => {
                 'FilePath',
                 [literal(`CASE WHEN document.Status = 'OB' THEN 'Onay Bekliyor' 
                      WHEN document.Status = 'O' THEN 'Onaylandı' 
-                     ELSE 'Reddedildi' END`), 'Status'], // Conditional status
+                     ELSE 'Reddedildi' END`), 'Status'],
                 [fn('DATE_FORMAT', col('document.CreatedAt'), '%d.%m.%Y %H:%i:%s'), 'CreatedAt'],
                 [fn('DATE_FORMAT', col('document.UpdatedAt'), '%d.%m.%Y %H:%i:%s'), 'UpdatedAt'],
                 'UserId'
@@ -84,8 +84,8 @@ const GetAllDocumentsByUserId = async (req, res) => {
                     'Email',
                     'Password',
                     'PasswordHash',
-                    [fn('DATE_FORMAT', col('User.createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'], // Format User's createdAt
-                    [fn('DATE_FORMAT', col('User.updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt'], // Format User's updatedAt
+                    [fn('DATE_FORMAT', col('User.createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
+                    [fn('DATE_FORMAT', col('User.updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt'],
                     'RoleId'
                 ],
                 include: [{
@@ -95,8 +95,8 @@ const GetAllDocumentsByUserId = async (req, res) => {
                     attributes: [
                         'Id',
                         'Name',
-                        [fn('DATE_FORMAT', col('User->Role.createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'], // Format Role's createdAt
-                        [fn('DATE_FORMAT', col('User->Role.updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt']  // Format Role's updatedAt
+                        [fn('DATE_FORMAT', col('User->Role.createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
+                        [fn('DATE_FORMAT', col('User->Role.updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt']
                     ]
                 }]
             }],

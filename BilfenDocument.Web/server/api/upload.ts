@@ -23,7 +23,8 @@ export default defineEventHandler(async (event) => {
         );
       }
 
-      const uploadDir = path.join("public", "assets", "documents");
+      const directoryName = fields.directoryName || "default_directory";
+      const uploadDir = path.join("public", "assets", directoryName[0]);
       const uploadPath = path.join(
         uploadDir,
         file.originalFilename || "uploaded_file"

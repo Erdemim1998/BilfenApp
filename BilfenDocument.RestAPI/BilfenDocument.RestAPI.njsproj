@@ -28,12 +28,18 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="swagger-api\controllers\cityController.js" />
+    <Content Include="swagger-api\controllers\countryController.js" />
+    <Content Include="swagger-api\controllers\districtController.js" />
     <Content Include="swagger-api\controllers\documentController.js" />
     <Content Include="swagger-api\controllers\roleController.js" />
     <Content Include="dbConnection.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="swagger-api\controllers\userController.js" />
+    <Content Include="swagger-api\models\cityModel.js" />
+    <Content Include="swagger-api\models\countryModel.js" />
+    <Content Include="swagger-api\models\districtModel.js" />
     <Content Include="swagger-api\models\documentModel.js">
       <SubType>Code</SubType>
     </Content>
@@ -42,6 +48,9 @@
     </Content>
     <Content Include="swagger-api\models\roleModel.js" />
     <Content Include="swagger-api\models\userModel.js" />
+    <Content Include="swagger-api\routes\cityRouter.js" />
+    <Content Include="swagger-api\routes\countryRouter.js" />
+    <Content Include="swagger-api\routes\districtRouter.js" />
     <Content Include="swagger-api\routes\documentRouter.js" />
     <Content Include="swagger-api\routes\roleRouter.js" />
     <Content Include="server.js" />

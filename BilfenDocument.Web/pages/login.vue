@@ -85,11 +85,11 @@ const LoginSubmit = async () => {
     if (res.data.message != null) {
       errorMessage.value = res.data.message;
     } else {
-      Cookies.set("token", res.data.token, { expires: 1 });
+      Cookies.set("token", res.data.token, { expires: 1 / 24 });
       Cookies.set("isAuthenticated", res.data.isAuthenticated, {
-        expires: 1,
+        expires: 1 / 24,
       });
-      Cookies.set("userId", res.data.userId, { expires: 1 });
+      Cookies.set("userId", res.data.userId, { expires: 1 / 24 });
       router.push("/dashboard");
     }
   } catch (error) {

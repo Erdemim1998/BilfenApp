@@ -21,7 +21,13 @@ module.exports = (sequelize, DataTypes) => {
     {
         timestamps: true,
         createdAt: 'CreatedAt',
-        updatedAt: 'UpdatedAt'
+        updatedAt: 'UpdatedAt',
+        indexes: [
+            {
+                unique: true,
+                fields: ['Name', 'UserId']
+            }
+        ]
     });
 
     return Document;

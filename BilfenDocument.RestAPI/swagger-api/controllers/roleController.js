@@ -48,74 +48,58 @@ const GetRole = async (req, res) => {
 
 const CreateRole = async (req, res) => {
     try {
-        const roleData = await Role.findOne({ where: { Name: req.body.Name } });
-
-        if (!roleData) {
-            let addedRole = {
-                Name: req.body.Name
-            }
-
-            const savedRole = await Role.create(addedRole);
-
-            const role = await Role.findOne({
-                attributes: [
-                    'Id',
-                    'Name',
-                    [fn('DATE_FORMAT', col('createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
-                    [fn('DATE_FORMAT', col('updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt']
-                ],
-                where: { Id: savedRole.Id }
-            });
-
-            if (role) {
-                return res.status(200).json(role);
-            }
-
-            return res.status(204).json();
+        let addedRole = {
+            Name: req.body.Name
         }
 
-        else {
-            return res.status(200).json({ message: 'Girilen role ait bir kayıt zaten var.' });
+        const savedRole = await Role.create(addedRole);
+
+        const role = await Role.findOne({
+            attributes: [
+                'Id',
+                'Name',
+                [fn('DATE_FORMAT', col('createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
+                [fn('DATE_FORMAT', col('updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt']
+            ],
+            where: { Id: savedRole.Id }
+        });
+
+        if (role) {
+            return res.status(200).json(role);
         }
+
+        return res.status(204).json();
     }
 
     catch (err) {
-        return res.status(400).json({ message: `Kayıt işlemi sırasında bir hata oluştu! Hata: ${err.message}` });
+        return res.status(200).json({ code: 400, message: `Girilen role ait bir kayıt zaten var.` });
     }
 }
 
 const EditRole = async (req, res) => {
     try {
-        const roleData = await Role.findOne({ where: { Name: req.body.Name } });
+        let id = req.body.Id;
+        let updated = await Role.update(req.body, { where: { Id: id } });
 
-        if (!roleData) {
-            let id = req.body.Id;
-            let updated = await Role.update(req.body, { where: { Id: id } });
+        const role = await Role.findOne({
+            attributes: [
+                'Id',
+                'Name',
+                [fn('DATE_FORMAT', col('createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
+                [fn('DATE_FORMAT', col('updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt']
+            ],
+            where: { Id: id }
+        });
 
-            const role = await Role.findOne({
-                attributes: [
-                    'Id',
-                    'Name',
-                    [fn('DATE_FORMAT', col('createdAt'), '%d.%m.%Y %H:%i:%s'), 'createdAt'],
-                    [fn('DATE_FORMAT', col('updatedAt'), '%d.%m.%Y %H:%i:%s'), 'updatedAt']
-                ],
-                where: { Id: id }
-            });
-
-            if (updated) {
-                return res.status(200).json(role);
-            }
-
-            return res.status(204).json({ message: "Rol kaydı bulunamadı!" });
+        if (updated) {
+            return res.status(200).json(role);
         }
 
-        else {
-            return res.status(200).json({ message: 'Girilen role ait bir kayıt zaten var.' });
-        }
+        return res.status(204).json({ message: "Rol kaydı bulunamadı!" });
     }
 
     catch (err) {
-        return res.status(400).json({ message: `Kayıt işlemi sırasında bir hata oluştu! Hata: ${err.message}` });
+        return res.status(200).json({ code: 400, message: `Girilen role ait bir kayıt zaten var.` });
     }
 }
 

@@ -9,14 +9,13 @@
       >
       <button
         type="submit"
-        id="btnDocumentSave"
         class="btn btn-success rounded me-2"
       >
         Kaydet
       </button>
+      <button type="submit" class="btn btn-danger rounded me-2 btnSaveAs" @click="btnSaveAsClick">Farklı Kaydet</button>
       <button
         type="submit"
-        id="btnDocumentDelete"
         class="btn btn-secondary rounded me-2"
         @click="btnDeleteClick"
       >
@@ -36,6 +35,7 @@ const emit = defineEmits<{
   (e: "record-list-click"): void;
   (e: "delete-click"): void;
   (e: "reset-click"): void;
+  (e: "save-as-click"): void;
 }>();
 
 const btnRecordListClick = () => {
@@ -49,4 +49,8 @@ const btnDeleteClick = () => {
 const btnResetClick = () => {
   emit("reset-click");
 };
+
+const btnSaveAsClick = () => {
+  emit("save-as-click");
+}
 </script>

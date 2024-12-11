@@ -10,6 +10,14 @@ import {
   faDownload,
   faCircleCheck,
   faCircleXmark,
+  faRightFromBracket,
+  faMagnifyingGlass,
+  faX,
+  faFilePdf,
+  faFileExcel,
+  faFileWord,
+  faFilter,
+  faSort,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faSignOutAlt);
@@ -19,6 +27,14 @@ library.add(faPlus);
 library.add(faDownload);
 library.add(faCircleCheck);
 library.add(faCircleXmark);
+library.add(faRightFromBracket);
+library.add(faMagnifyingGlass);
+library.add(faX);
+library.add(faFilePdf);
+library.add(faFileExcel);
+library.add(faFileWord);
+library.add(faFilter);
+library.add(faSort);
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("font-awesome-icon", FontAwesomeIcon);

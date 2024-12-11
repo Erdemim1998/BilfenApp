@@ -112,3 +112,117 @@ button:disabled {
 .star {
   color: red;
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  width: 40px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #fff;
+}
+
+.download-btn i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.btn-pdf {
+  background-color: #e74c3c;
+}
+
+.btn-pdf:hover {
+  background-color: #c0392b;
+}
+
+.btn-excel {
+  background-color: #2ecc71;
+}
+
+.btn-excel:hover {
+  background-color: #27ae60;
+}
+
+.btn-word {
+  background-color: #3498db;
+}
+
+.btn-word:hover {
+  background-color: #2980b9;
+}
+
+.pagination {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  position: relative; /* Orta hizalamayı desteklemek için */
+}
+
+.pagination-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Ortaya hizalama */
+  display: flex;
+  align-items: center;
+}
+
+.filter-modal {
+  padding: 5px;
+  border: 1px solid black;
+  background-color: #fff;
+}
+
+.filter-modal input {
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.filter-modal button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.upload-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.upload-container:hover {
+  border-color: #007bff;
+}
+.upload-preview {
+  margin-top: 20px;
+}
+.upload-preview img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

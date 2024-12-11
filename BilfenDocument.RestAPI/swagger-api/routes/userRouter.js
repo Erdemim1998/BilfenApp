@@ -14,8 +14,20 @@ const userRouter = require('express').Router();
  *         - Email
  *         - Password
  *         - PasswordHash
+ *         - TCKN
+ *         - MotherName
+ *         - FatherName
+ *         - BirthDate
+ *         - Gender
+ *         - CivilStatus
+ *         - EmploymentDate
+ *         - Address
  *         - createdAt
  *         - updatedAt
+ *         - RoleId
+ *         - CountryId
+ *         - CityId
+ *         - DistrictId
  *       properties:
  *         Id:
  *           type: int
@@ -38,6 +50,39 @@ const userRouter = require('express').Router();
  *         PasswordHash:
  *           type: string
  *           description: The user's hash password
+ *         ImagePath:
+ *           type: string
+ *           description: The user's image path
+ *         TCKN:
+ *           type: string
+ *           description: The user's serial number
+ *         MotherName:
+ *           type: string
+ *           description: The user's mother name
+ *         FatherName:
+ *           type: string
+ *           description: The user's father name
+ *         BirthDate:
+ *           type: string
+ *           description: The user's birth date
+ *         Gender:
+ *           type: string
+ *           description: The user's gender
+ *         CivilStatus:
+ *           type: string
+ *           description: The user's civil status
+ *         EmploymentDate:
+ *           type: string
+ *           description: The user's employment date
+ *         MilitaryStatus:
+ *           type: string
+ *           description: The user's military status
+ *         PostponementDate:
+ *           type: string
+ *           description: The user's postponement date
+ *         Address:
+ *           type: string
+ *           description: The user's address
  *         createdAt:
  *           type: string
  *           description: The user's created date
@@ -53,6 +98,33 @@ const userRouter = require('express').Router();
  *              application/json:
  *                  schema:
  *                      $ref: '#/components/schemas/Role'
+ *         CountryId:
+ *           type: string
+ *           description: The user's country id
+ *         Country:
+ *           type: object
+ *           content:
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/Country'
+ *         CityId:
+ *           type: string
+ *           description: The user's city id
+ *         City:
+ *           type: object
+ *           content:
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/City'
+ *         DistrictId:
+ *           type: string
+ *           description: The user's district id
+ *         District:
+ *           type: object
+ *           content:
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/District'
  *       example:
  *         Id: 0
  *         FirstName: "string"
@@ -61,6 +133,17 @@ const userRouter = require('express').Router();
  *         Email: "string"
  *         Password: "string"
  *         PasswordHash: "string"
+ *         ImagePath: "string"
+ *         TCKN: "string"
+ *         MotherName: "string"
+ *         FatherName: "string"
+ *         BirthDate: "string"
+ *         Gender: "string"
+ *         CivilStatus: "string"
+ *         EmploymentDate: "string"
+ *         MilitaryStatus: "string"
+ *         PostponementDate: "string"
+ *         Address: "string"
  *         createdAt: "string"
  *         updatedAt: "string"
  *         RoleId: 0
@@ -69,6 +152,42 @@ const userRouter = require('express').Router();
  *          Name: "string"
  *          createdAt: "string"
  *          updatedAt: "string"
+ *         CountryId: "string"
+ *         Country:
+ *          Id: "string"
+ *          Name: "string"
+ *          createdAt: "string"
+ *          updatedAt: "string"
+ *         CityId: "string"
+ *         City:
+ *          Id: "string"
+ *          Name: "string"
+ *          createdAt: "string"
+ *          updatedAt: "string"
+ *          CountryId: "string"
+ *          Country:
+ *           Id: "string"
+ *           Name: "string"
+ *           createdAt: "string"
+ *           updatedAt: "string"
+ *         DistrictId: "string"
+ *         District:
+ *          Id: "string"
+ *          Name: "string"
+ *          createdAt: "string"
+ *          updatedAt: "string"
+ *          CityId: "string"
+ *          City:
+ *           Id: "string"
+ *           Name: "string"
+ *           createdAt: "string"
+ *           updatedAt: "string"
+ *           CountryId: "string"
+ *           Country:
+ *            Id: "string"
+ *            Name: "string"
+ *            createdAt: "string"
+ *            updatedAt: "string"
  *     
  *     CreateUpdateUser:
  *       type: object
@@ -78,7 +197,18 @@ const userRouter = require('express').Router();
  *         - UserName
  *         - Email
  *         - Password
+ *         - TCKN
+ *         - MotherName
+ *         - FatherName
+ *         - BirthDate
+ *         - Gender
+ *         - CivilStatus
+ *         - EmploymentDate
+ *         - Address
  *         - RoleId
+ *         - CountryId
+ *         - CityId
+ *         - DistrictId
  *       properties:
  *         Id:
  *           type: int
@@ -98,9 +228,51 @@ const userRouter = require('express').Router();
  *         Password:
  *           type: string
  *           description: The user's password
+ *         ImagePath:
+ *           type: string
+ *           description: The user's image path
+ *         TCKN:
+ *           type: string
+ *           description: The user's serial number
+ *         MotherName:
+ *           type: string
+ *           description: The user's mother name
+ *         FatherName:
+ *           type: string
+ *           description: The user's father name
+ *         BirthDate:
+ *           type: string
+ *           description: The user's birth date
+ *         Gender:
+ *           type: string
+ *           description: The user's gender
+ *         CivilStatus:
+ *           type: string
+ *           description: The user's civil status
+ *         EmploymentDate:
+ *           type: string
+ *           description: The user's employment date
+ *         MilitaryStatus:
+ *           type: string
+ *           description: The user's military status
+ *         PostponementDate:
+ *           type: string
+ *           description: The user's postponement date
+ *         Address:
+ *           type: string
+ *           description: The user's address
  *         RoleId:
  *           type: int
  *           description: The user's role id
+ *         CountryId:
+ *           type: string
+ *           description: The user's country id
+ *         CityId:
+ *           type: string
+ *           description: The user's city id
+ *         DistrictId:
+ *           type: string
+ *           description: The user's district id
  *       example:
  *         Id: 0
  *         FirstName: "string"
@@ -108,7 +280,21 @@ const userRouter = require('express').Router();
  *         UserName: "string"
  *         Email: "string"
  *         Password: "string"
+ *         ImagePath: "string"
+ *         TCKN: "string"
+ *         MotherName: "string"
+ *         FatherName: "string"
+ *         BirthDate: "string"
+ *         Gender: "string"
+ *         CivilStatus: "string"
+ *         EmploymentDate: "string"
+ *         MilitaryStatus: "string"
+ *         PostponementDate: "string"
+ *         Address: "string"
  *         RoleId: 0
+ *         CountryId: "string"
+ *         CityId: "string"
+ *         DistrictId: "string"
  * 
  *     Login:
  *       type: object

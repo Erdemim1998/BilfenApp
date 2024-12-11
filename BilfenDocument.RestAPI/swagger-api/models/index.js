@@ -28,6 +28,9 @@ db.sequelize = sequelize;
 db.roles = require('./roleModel.js')(sequelize, DataTypes);
 db.users = require('./userModel.js')(sequelize, DataTypes);
 db.documents = require('./documentModel.js')(sequelize, DataTypes);
+db.countries = require('./countryModel.js')(sequelize, DataTypes);
+db.cities = require('./cityModel.js')(sequelize, DataTypes);
+db.districts = require('./districtModel.js')(sequelize, DataTypes);
 
 db.roles.hasMany(db.users, {
     foreignKey: {
@@ -59,6 +62,86 @@ db.documents.belongsTo(db.users, {
         allowNull: false
     },
     as: 'User'
+});
+
+db.countries.hasMany(db.users, {
+    foreignKey: {
+        name: 'CountryId',
+        allowNull: false
+    },
+    as: 'users'
+});
+
+db.users.belongsTo(db.countries, {
+    foreignKey: {
+        name: 'CountryId',
+        allowNull: false
+    },
+    as: 'Country'
+});
+
+db.countries.hasMany(db.cities, {
+    foreignKey: {
+        name: 'CountryId',
+        allowNull: false
+    },
+    as: 'cities'
+});
+
+db.cities.belongsTo(db.countries, {
+    foreignKey: {
+        name: 'CountryId',
+        allowNull: false
+    },
+    as: 'Country'
+});
+
+db.cities.hasMany(db.users, {
+    foreignKey: {
+        name: 'CityId',
+        allowNull: false
+    },
+    as: 'users'
+});
+
+db.users.belongsTo(db.cities, {
+    foreignKey: {
+        name: 'CityId',
+        allowNull: false
+    },
+    as: 'City'
+});
+
+db.cities.hasMany(db.districts, {
+    foreignKey: {
+        name: 'CityId',
+        allowNull: false
+    },
+    as: 'districts'
+});
+
+db.districts.belongsTo(db.cities, {
+    foreignKey: {
+        name: 'CityId',
+        allowNull: false
+    },
+    as: 'City'
+});
+
+db.districts.hasMany(db.users, {
+    foreignKey: {
+        name: 'DistrictId',
+        allowNull: false
+    },
+    as: 'users'
+});
+
+db.users.belongsTo(db.districts, {
+    foreignKey: {
+        name: 'DistrictId',
+        allowNull: false
+    },
+    as: 'District'
 });
 
 db.sequelize.sync({ alter: true, force: false })
