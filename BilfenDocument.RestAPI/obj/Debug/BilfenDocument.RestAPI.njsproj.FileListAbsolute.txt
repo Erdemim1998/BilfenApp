@@ -13,3 +13,6 @@ C:\Users\efsane\Desktop\GitHub\BilfenApp\BilfenDocument.RestAPI\bin\Microsoft.No
 C:\Users\Administrator\Desktop\BilfenApp\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.AssemblyReference.cache
 C:\Users\Administrator\Desktop\BilfenApp\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\BilfenApp\BilfenDocument.RestAPI\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\erdemanacoglu\OneDrive - Bilfen Şirketler Topluluğu\Masaüstü\BilfenApp\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.AssemblyReference.cache
+C:\Users\erdemanacoglu\OneDrive - Bilfen Şirketler Topluluğu\Masaüstü\BilfenApp\BilfenDocument.RestAPI\obj\Debug\BilfenDocument.RestAPI.njsproj.CoreCompileInputs.cache
+C:\Users\erdemanacoglu\OneDrive - Bilfen Şirketler Topluluğu\Masaüstü\BilfenApp\BilfenDocument.RestAPI\bin\Microsoft.NodejsTools.WebRole.dll

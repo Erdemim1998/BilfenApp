@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\",
+  "WorkspaceRootPath": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\userController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\userController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:swagger-api\\controllers\\userController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\roleController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\roleController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:swagger-api\\controllers\\roleController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\documentController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\documentController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:swagger-api\\controllers\\documentController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\routes\\documentRouter.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\routes\\documentRouter.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:swagger-api\\routes\\documentRouter.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\models\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\models\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:swagger-api\\models\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{AD61E703-CB94-41DC-B85D-863A114329C4}|BilfenDocument.RestAPI.njsproj|solutionrelative:server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -44,48 +44,45 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "roleController.js",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\roleController.js",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\roleController.js",
               "RelativeDocumentMoniker": "swagger-api\\controllers\\roleController.js",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\roleController.js",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\roleController.js",
               "RelativeToolTip": "swagger-api\\controllers\\roleController.js",
               "ViewState": "AgIAAGIAAAAAAAAAAAAtwG8AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-11T06:07:13.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T06:07:13.745Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "documentController.js",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\documentController.js",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\documentController.js",
               "RelativeDocumentMoniker": "swagger-api\\controllers\\documentController.js",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\documentController.js",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\documentController.js",
               "RelativeToolTip": "swagger-api\\controllers\\documentController.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-09T06:54:59.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T06:54:59.663Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "documentRouter.js",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\routes\\documentRouter.js",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\routes\\documentRouter.js",
               "RelativeDocumentMoniker": "swagger-api\\routes\\documentRouter.js",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\routes\\documentRouter.js",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\routes\\documentRouter.js",
               "RelativeToolTip": "swagger-api\\routes\\documentRouter.js",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-12-09T06:55:09.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T06:55:09.765Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "package.json",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\package.json",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\package.json",
               "RelativeDocumentMoniker": "package.json",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\package.json",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\package.json",
               "RelativeToolTip": "package.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -95,9 +92,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "server.js",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\server.js",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\server.js",
               "RelativeDocumentMoniker": "server.js",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\server.js",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\server.js",
               "RelativeToolTip": "server.js",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -107,9 +104,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\models\\index.js",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\models\\index.js",
               "RelativeDocumentMoniker": "swagger-api\\models\\index.js",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\models\\index.js",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\models\\index.js",
               "RelativeToolTip": "swagger-api\\models\\index.js",
               "ViewState": "AgIAAIcAAAAAAAAAAAAIwJIAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -119,11 +116,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "userController.js",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\userController.js",
+              "DocumentMoniker": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\userController.js",
               "RelativeDocumentMoniker": "swagger-api\\controllers\\userController.js",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\userController.js",
+              "ToolTip": "C:\\Users\\erdemanacoglu\\OneDrive - Bilfen \u015Eirketler Toplulu\u011Fu\\Masa\u00FCst\u00FC\\BilfenApp\\BilfenDocument.RestAPI\\swagger-api\\controllers\\userController.js",
               "RelativeToolTip": "swagger-api\\controllers\\userController.js",
-              "ViewState": "AgIAACYBAAAAAAAAAAAtwDcBAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAGYCAAAAAAAAAAAtwHMCAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-12-07T18:56:23.015Z",
               "EditorCaption": ""

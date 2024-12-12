@@ -1,1 +1,1 @@
-export { default } from "file:///C:/Users/Administrator/Desktop/BilfenApp/BilfenDocument.Web/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///C:/Users/erdemanacoglu/OneDrive%20-%20Bilfen%20%C5%9Eirketler%20Toplulu%C4%9Fu/Masa%C3%BCst%C3%BC/BilfenApp/BilfenDocument.Web/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
