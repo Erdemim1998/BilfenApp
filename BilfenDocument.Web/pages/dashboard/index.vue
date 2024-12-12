@@ -215,7 +215,7 @@
 
                 <div class="col-4">
                   <input type="text" id="serialNumber" ref="serialNumber" class="form-control"
-                    placeholder="TC Kimlik Numarası bilgisini giriniz" v-model="SerialNumber">
+                    placeholder="TC Kimlik Numarası bilgisini giriniz" v-model="SerialNumber" @keypress="allowOnlyNumbers">
                   <span v-if="vUser$.SerialNumber.$error" class="error">TC Kimlik No bilgisi zorunludur.</span>
                 </div>
               </div>
@@ -1840,6 +1840,12 @@ onMounted(async () => {
   }
 });
 
+const allowOnlyNumbers = (event: any) => {
+  if (!/[0-9]/.test(event.key) || serialNumber.value!.value.length >= 11) {
+    event.preventDefault();
+  }
+}
+
 const checkTableEmpty = (table: Element) => {
   if(!table.querySelector<Element>("tr")) {
     table.parentNode!.querySelector<Element>('thead')!.remove();
@@ -1908,6 +1914,13 @@ const checkPreviousAndNextButtons = (paginatedData: any, btnPrevious: HTMLElemen
 const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
   debugger;
   const tbody = document.querySelector<HTMLTableSectionElement>(`#${id} table tbody`);
+  let tr;
+  let td;
+  let linkUpdate;
+  let linkDelete;
+  let linkApprove;
+  let linkReject;
+  let linkUndo;
 
   if (tbody) {
     tbody.innerHTML = '';
@@ -1916,7 +1929,7 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
   if (id === 'recordListModal') {
     if (roleName.value == 'ADMIN') {
       paginatedData.paginatedData().forEach((user: any) => {
-        const tr = document.createElement('tr');
+        tr = document.createElement('tr');
         tr.style.cursor = 'pointer';
         tr.addEventListener('click', () => recordListRowClick(user.Id, user.FirstName, user.LastName, user.UserName, user.Email,
                                                               user.Password, user.RoleId, user.createdAt, user.updatedAt, user.TCKN,
@@ -1948,7 +1961,7 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
 
     else {
       paginatedData.paginatedData().forEach((doc: any) => {
-        const tr = document.createElement('tr');
+        tr = document.createElement('tr');
         tr.style.cursor = 'pointer';
         tr.addEventListener('click', () => documentRecordListRowClick(doc.Id, doc.Name, doc.FilePath, doc.Status,
                                                                       doc.CreatedAt, doc.UpdatedAt));
@@ -1968,13 +1981,13 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
 
   else if (id === 'divRole') {
     paginatedData.paginatedData().forEach((role: any) => {
-      const tr = document.createElement('tr');
-      const td = document.createElement('td');
-      const linkUpdate = document.createElement('a');
+      tr = document.createElement('tr');
+      td = document.createElement('td');
+      linkUpdate = document.createElement('a');
       linkUpdate.classList.add("btn", "me-2", "btnUpdateRole");
       linkUpdate.textContent = "Güncelle";
       linkUpdate.addEventListener("click", () => btnRecordUpdate('roles', 'GetRole', 'roleRecordModal', roleRecordModal.value!, role.Id));
-      const linkDelete = document.createElement('a');
+      linkDelete = document.createElement('a');
       linkDelete.classList.add("btn", "btnDeleteRole");
       linkDelete.textContent = "Sil";
       linkDelete.addEventListener("click", () => btnRecordDelete('roles', 'GetRole', role.Id, roleDeleteModal.value!));
@@ -2005,13 +2018,13 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
 
   else if (id === 'divCountry') {
     paginatedData.paginatedData().forEach((country: any) => {
-      const tr = document.createElement('tr');
-      const td = document.createElement('td');
-      const linkUpdate = document.createElement('a');
+      tr = document.createElement('tr');
+      td = document.createElement('td');
+      linkUpdate = document.createElement('a');
       linkUpdate.classList.add("btn", "me-2", "btn-primary", "btnUpdateCountry");
       linkUpdate.textContent = "Güncelle";
       linkUpdate.addEventListener("click", () => btnRecordUpdate('countries', 'GetCountry', 'countryRecordModal', countryRecordModal.value!, country.Id));
-      const linkDelete = document.createElement('a');
+      linkDelete = document.createElement('a');
       linkDelete.classList.add("btn", "btn-danger", "btnDeleteCountry");
       linkDelete.textContent = "Sil";
       linkDelete.addEventListener("click", () => btnRecordDelete('countries', 'GetCountry', country.Id, countryDeleteModal.value!));
@@ -2032,13 +2045,13 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
 
   else if (id === 'divCity') {
     paginatedData.paginatedData().forEach((city: any) => {
-      const tr = document.createElement('tr');
-      const td = document.createElement('td');
-      const linkUpdate = document.createElement('a');
+      tr = document.createElement('tr');
+      td = document.createElement('td');
+      linkUpdate = document.createElement('a');
       linkUpdate.classList.add("btn", "me-2", "btn-primary", "btnUpdateCity");
       linkUpdate.textContent = "Güncelle";
       linkUpdate.addEventListener("click", () => btnRecordUpdate('cities', 'GetCity', 'cityRecordModal', cityRecordModal.value!, city.Id));
-      const linkDelete = document.createElement('a');
+      linkDelete = document.createElement('a');
       linkDelete.classList.add("btn", "btn-danger", "btnDeleteCity");
       linkDelete.textContent = "Sil";
       linkDelete.addEventListener("click", () => btnRecordDelete('cities', 'GetCity', city.Id, cityDeleteModal.value!));
@@ -2060,13 +2073,13 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
 
   else if (id === 'divDistrict') {
     paginatedData.paginatedData().forEach((district: any) => {
-      const tr = document.createElement('tr');
-      const td = document.createElement('td');
-      const linkUpdate = document.createElement('a');
+      tr = document.createElement('tr');
+      td = document.createElement('td');
+      linkUpdate = document.createElement('a');
       linkUpdate.classList.add("btn", "me-2", "btn-primary", "btnUpdateDistrict");
       linkUpdate.textContent = "Güncelle";
       linkUpdate.addEventListener("click", () => btnRecordUpdate('districts', 'GetDistrict', 'districtRecordModal', districtRecordModal.value!, district.Id));
-      const linkDelete = document.createElement('a');
+      linkDelete = document.createElement('a');
       linkDelete.classList.add("btn", "btn-danger", "btnDeleteDistrict");
       linkDelete.textContent = "Sil";
       linkDelete.addEventListener("click", () => btnRecordDelete('districts', 'GetDistrict', district.Id, districtDeleteModal.value!));
@@ -2088,9 +2101,9 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
 
   else if (id === 'divDocumentApprove') {
     paginatedData.paginatedData().forEach((doc: any) => {
-      const tr = document.createElement('tr');
-      const td = document.createElement('td');
-      const linkApprove = document.createElement('a');
+      tr = document.createElement('tr');
+      td = document.createElement('td');
+      linkApprove = document.createElement('a');
       linkApprove.classList.add("btn", "p-1", "border-0");
       
       if (doc.Status === 'Onaylandı' || doc.Status === 'Reddedildi') {
@@ -2102,7 +2115,7 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
                               </svg>`;
       linkApprove.addEventListener("click", () => btnApproveRejectClick(doc.Id, doc.Name, doc.CreatedAt, doc.User.FirstName, doc.User.LastName, doc.User.Email, true));
 
-      const linkReject = document.createElement('a');
+      linkReject = document.createElement('a');
       linkReject.classList.add("btn", "p-1", "border-0");
       
       if (doc.Status === 'Onaylandı' || doc.Status === 'Reddedildi') {
@@ -2114,7 +2127,7 @@ const showData = (paginatedData: any, id: string, pageCount: HTMLElement) => {
                               </svg>`;
       linkReject.addEventListener("click", () => btnApproveRejectClick(doc.Id, doc.Name, doc.CreatedAt, doc.User.FirstName, doc.User.LastName, doc.User.Email, false));
 
-      const linkUndo = document.createElement('a');
+      linkUndo = document.createElement('a');
       linkUndo.classList.add("btn", "btn-primary", "p-1", "m-1");
       
       if (doc.Status === 'Onaylandı' || doc.Status === 'Reddedildi') {
@@ -3505,22 +3518,28 @@ const btnSearchClick = async (searchType: string) => {
 
 const btnSearchClearClick = (searchType: string) => {
   if (searchType === "Country" && countryId.value && countryName.value && cityId.value && cityName.value && districtId.value && districtName.value) {
+    CountryId.value = "";
     countryId.value.value = "";
     countryName.value.value = "";
+    CityId.value = "";
     cityId.value.value = "";
     cityName.value.value = "";
+    DistrictId.value = "";
     districtId.value.value = "";
     districtName.value.value = "";
   }
 
   else if (searchType === "City" && cityId.value && cityName.value && districtId.value && districtName.value) {
+    CityId.value = "";
     cityId.value.value = "";
     cityName.value.value = "";
+    DistrictId.value = "";
     districtId.value.value = "";
     districtName.value.value = "";
   }
 
   else if (searchType === "District" && districtId.value && districtName.value) {
+    DistrictId.value = "";
     districtId.value.value = "";
     districtName.value.value = "";
   }
